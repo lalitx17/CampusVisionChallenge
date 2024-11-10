@@ -9,21 +9,6 @@
 ## Project Overview
 This project focuses on building an image classification model to identify and classify 10 buildings on the Mississippi State University campus. The goal is to train a convolutional neural network (CNN) using the ResNet-18 architecture, which is a popular choice for image recognition tasks due to its balanced performance in both accuracy and training efficiency.
 
-## Folder Structure
-The project folder structure should look like this:
-```bash
-CampusVisionChallenge/
-├── models/                                   # Folder containing the trained models
-│   └── resnet-pretrained-large.pth           # The best model saved after training
-├── log.txt                                   # Log file for training process
-├── requirements.txt                          # List of dependencies (e.g., torch, torchvision, etc.)
-├── README.md                                 # Project documentation
-├── resnet_pretrained.ipynb                   # Jupyter notebook for working with ResNet
-├── ipynb_checkpoints/                        # Folder for Jupyter notebook checkpoint files (optional)
-├── __pycache__/                              # Python bytecode cache (optional, can be ignored)
-└──.gitignore                                 # Git ignore file to prevent tracking unnecessary files
-```
-
 
 ### Approach
 1. **Data Preprocessing**:
@@ -54,7 +39,30 @@ To run the project, install the dependencies listed in `requirements.txt` and ru
 pip install -r requirements.txt
 ```
 
-## Notes on Testing the Model
+## Folder Structure for Model Training 
+The folder structure should look like this:
+```bash
+CampusVisionChallenge/
+├── campusVision                              # Folder containing building images
+│   └── Butler                                # Folder containing Butler's images
+│       └── Butler_Hall_1.png
+│       └── Butler_Hall_2.png
+│       └── ...
+│   └── Carpenter                             # Folder containing Carpenter's images
+│       └── Carpenter_Hall_1.png
+│       └── ...
+│   └── ...
+├── models/                                   # Folder containing the trained models
+│   └── resnet-pretrained-large.pth           # The best model saved after training
+├── resnet_pretrained.ipynb                   # Jupyter notebook for working with ResNet
+├── log.txt                                   # Log file for training process
+├── requirements.txt                          # List of dependencies (e.g., torch, torchvision, etc.)
+├── README.md                                 # Project documentation
+├── ipynb_checkpoints/                        # Folder for Jupyter notebook checkpoint files (optional)
+├── __pycache__/                              # Python bytecode cache (optional, can be ignored)
+└──.gitignore                                 # Git ignore file to prevent tracking unnecessary files
+```
+## Notes on Model Testing
 The model returns integers from 0-9 each corresponding to one of the 10 building classes. The buildings are numbered in order of their arrangement in the directory of images. For reference:
 ```bash
 0: Butler
